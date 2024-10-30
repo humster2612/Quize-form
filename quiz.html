@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+        <span class="progress-text" id="progress-text">ЗАВЕРШЕНО: 0%</span>
+    </div>
+
+    <div class="form-container">
+        <form id="survey-form">
+            <!-- Вопрос 1 -->
+            <div class="question active">
+    <h2>Вы уже пробовали торговать на финансовых рынках?</h2>
+    <div class="label-container">
+        <label>
+            <input type="radio" name="question1" value="yes"> Да
+        </label>
+        <label>
+            <input type="radio" name="question1" value="no"> Нет
+        </label>
+    </div>
+</div>
+            <!-- Вопрос 2 -->
+            <div class="question">
+    <h2>Какие цели в обучении трейдингу вы перед собой ставите?</h2>
+    <div class="choice-hint">
+        <img src="img/ok-good.png" alt="checkmark">
+        Выберите один или несколько вариантов
+    </div>
+    <div class="label-container">
+        <label>
+            <input type="checkbox" name="question2" value="goal1"> Разобраться в трейдинге и начать торговать
+        </label>
+        <label>
+            <input type="checkbox" name="question2" value="goal2"> Глубже разобраться в техническом анализе
+        </label>
+        <label>
+            <input type="checkbox" name="question2" value="goal3"> Разобраться в психологии трейдинга
+        </label>
+        <label>
+            <input type="checkbox" name="question2" value="goal4"> Систематизировать свои знания и опыт
+        </label>
+        <label>
+            <input type="checkbox" name="question2" value="goal5"> Овладеть новыми торговыми стратегиями
+        </label>
+        <label>
+            <input type="checkbox" name="question2" value="goal6"> Узнать свои сильные и слабые стороны от менторов
+        </label>
+    </div>
+</div>
+
+
+           
+         <!-- Вопрос 3 -->
+<div class="question active" id="form-section">
+    <form action="api.php" method="post" id="form-new" class="form__body-new1">
+<div class="wrapperform">
+    <div class="leftblockText">           
+         <h1 class="form__title-new1">Оставьте свои реальные контактные данные, чтобы мы открыли доступ к мини курсу</h1>
+    </div>
+    <div class="RightBlockText">
+
+   <div class="form__item-new1">
+    <div class="input-icon-wrapper">
+        <img src="img/person.png" alt="" class="input-iconperson">
+        <input id="formName" class="offer__form-input-new1" type="text" placeholder="Имя" name="name" required>
+    </div>
+</div>
+        
+       <div class="form__item-new1">
+    <div class="input-icon-wrapper">
+       <!-- <img src="img/telephone.png" alt="" class="input-icon">-->
+        <input id="formPhone" class="offer__form-input-new1 phone-input-new" type="tel" placeholder="Телефон" name="phone" required>
+    </div>
+</div>
+
+       <div class="form__item-new1">
+    <div class="input-icon-wrapper">
+        <img src="img/email.png" alt="" class="input-icon">
+        <input id="formEmail" class="offer__form-input-new1 emailmar" type="email" placeholder="Почта" name="email" required>
+    </div>
+</div>
+        
+        <button type="submit" class="popup-form-button-new1">Отправить</button>
+    
+    </div>
+
+    </div>
+        
+</div>
+    </form>
+</div>
+
+ 
+
+            <!-- Кнопки навигации -->
+  <div class="navigation">
+    <button type="button" id="prev-button" disabled>
+        <i class="fas fa-arrow-left"></i> Назад
+    </button>
+    <button type="button" id="next-button">
+        Далее <i class="fas fa-arrow-right"></i>
+    </button>
+</div>
+
+        </form>
+    </div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+   
+    <script src="js/quiz.js"></script>
+ 
+</body>
+</html>
+
+
+
+

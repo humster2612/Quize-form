@@ -1,0 +1,443 @@
+/* обнуление стилкй */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* _______________________________________________- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 100px;
+    padding: 0;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    height: 4px;
+    position: relative;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    height: 4px;
+    background-color: #007bff;
+    width: 0;
+}
+
+.progress-text {
+    position: absolute;
+    top: -25px;
+    left: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.question {
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    font-size: 34px; 
+    font-weight: 700;
+    color: #052555;
+    font-family: "Roboto", sans-serif;
+}
+
+.choice-hint {
+    display: flex;
+    align-items: center;
+    font-size: 18px; 
+    color: #1a73e8; 
+    background-color: hwb(200 80% 4%); 
+    padding: 15px 20px; 
+    border-radius: 30px; 
+    margin-bottom: 40px; 
+    width: fit-content; 
+}
+
+.choice-hint img {
+    margin-right: 10px; 
+    width: 20px; 
+    height: 20px; 
+}
+
+.choice-hint img {
+    width: 16px;
+    height: 16px;
+}
+
+
+.label-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    width: 48%; 
+    margin-bottom: 35px;
+    font-size: 20px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px; 
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+button#prev-button {
+    background-color: transparent;
+    color: #000;
+    border: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button#prev-button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+button#next-button, button#submit-button {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px; 
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+button#next-button:hover, button#submit-button:hover {
+    background-color: #0056b3; 
+}
+
+button#prev-button i {
+    margin-right: 10px; 
+}
+
+button#next-button i {
+    margin-left: 10px; 
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        
+        margin: 50px;
+    }
+
+    .form-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .label-container {
+        display: block;
+    }
+
+    label {
+        width: 100%; 
+        margin-bottom: 15px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Новый контейнер для текста и формы */
+.wrapperform {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px 0; 
+}
+
+
+.leftblockText {
+    flex: 1; 
+    margin-right: 20px; 
+    max-width: 55%; 
+    text-align: left; 
+}
+
+
+.RightBlockText {
+    flex: 1; 
+    max-width: 35%; 
+}
+
+
+.form__body-new1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.form__title-new1 {
+    font-size: 34px; 
+    font-weight: 700;
+    color: #052555;
+    font-family: "Roboto", sans-serif;
+    text-align: left;
+    line-height: 1.4; 
+    margin-bottom: 30px; 
+    margin-top: 10px;
+}
+
+.form__item-new1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px; 
+}
+
+.offer__form-input-new1 {
+    padding: 20px 20px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 30px !important; 
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important;
+    outline: none !important;
+    padding-left: 80px !important;
+}
+
+.input-icon-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 20px; /* Расстояние от левого края поля */
+    
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; /* Размер иконки */
+    height: 30px;
+    pointer-events: none; /* Чтобы иконка не мешала вводу текста */
+}
+
+.input-iconperson{
+    position: absolute;
+   margin-top: 30px;
+   left:20px;
+    transform: translateY(-50%);
+    width: 30px; /* Размер иконки */
+    height: 30px;
+    pointer-events: none; /* Чтобы иконка не мешала вводу текста */
+}
+
+
+
+.popup-form-button-new1 {
+    padding: 15px 20px;
+    background: rgb(67, 130, 224);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.emailmar {
+    border-radius: 30px; 
+    margin-top: 20px;
+}
+
+.popup-form-button-new1:hover {
+    background: rgb(67, 130, 224);
+}
+
+.form__item-new1 .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #999;
+}
+
+.iti {
+    width: 100%;
+}
+
+.iti__selected-flag {
+    width: auto !important;
+    padding-right: 10px;
+    border-radius: 30px; 
+    background-color: #ccc; 
+}
+
+.iti__selected-dial-code {
+    font-size: 16px;
+    color: #333;
+    margin-left: 10px;
+}
+
+.iti--allow-dropdown input {
+    padding-left: 180px; 
+    border-radius: 30px !important; 
+    width: calc(100% - 100px); 
+    box-sizing: border-box;
+}
+
+.iti--separate-dial-code .iti__flag-container {
+    padding-left: 0;
+    margin-left: 0px; 
+}
+
+.iti__country-list {
+    width: auto !important;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.iti__country-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+    .wrapperform {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .leftblockText {
+        margin-right: 0;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .RightBlockText {
+        max-width: 100%;
+    }
+}
