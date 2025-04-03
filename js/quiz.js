@@ -135,32 +135,32 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!nameRegex.test(nameInput.value.trim())) {
             nameInput.classList.add('error');
             if (nameInput.value.trim() === '') {
-                nameInput.placeholder = 'Введите полное имя';
+                nameInput.placeholder = 'Введіть повне ім`я';  
             }
             isValid = false;
         } else {
             nameInput.classList.remove('error');
-            nameInput.placeholder = 'Ваше имя';
+            nameInput.placeholder = 'Ваше ім`я';
         }
 
         if (!emailRegex.test(emailInput.value.trim())) {
             emailInput.classList.add('error');
             if (emailInput.value.trim() === '') {
-                emailInput.placeholder = 'Введите правильно почту';
+                emailInput.placeholder = 'Введіть правильно пошту';
             }
             isValid = false;
         } else {
             emailInput.classList.remove('error');
-            emailInput.placeholder = 'Ваша почта';
+            emailInput.placeholder = 'Ваша пощта';
         }
 
         if (!phoneInput.isValidNumber()) {
             phoneInputField.classList.add('error');
-            phoneInputField.placeholder = 'Введите правильный номер';
+            phoneInputField.placeholder = 'Введіть правильный номер';
             isValid = false;
         } else {
             phoneInputField.classList.remove('error');
-            phoneInputField.placeholder = 'Ваш номер телефона';
+            phoneInputField.placeholder = 'Ваш номер телефону';
         }
 
         if (!isValid) {
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (nameRegex.test(nameValue)) {
             nameInput.classList.remove('error');
-            nameInput.placeholder = 'Ваше имя';
+            nameInput.placeholder = 'Ваше ім`я';
         }
     });
 
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (emailRegex.test(emailValue)) {
             emailInput.classList.remove('error');
-            emailInput.placeholder = 'Ваша почта';
+            emailInput.placeholder = 'Ваша пошта';
         }
     });
 
